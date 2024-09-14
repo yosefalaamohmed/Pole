@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صور الذكاء الاصطناعي</title>
+    
+    <!-- CSS لتنسيق الصفحة -->
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .container p {
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            font-size: 18px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #changeImage {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #changeImage:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>مرحبًا بكم في صفحة صور الذكاء الاصطناعي</h1>
+
+    <!-- حاوية الصورة -->
+    <div id="imageContainer" class="container" style="background-image: url('https://via.placeholder.com/300');">
+        <p>صورة تم إنشاؤها بواسطة الذكاء الاصطناعي</p>
+    </div>
+
+    <!-- زر لتغيير الصورة -->
+    <button id="changeImage">تغيير الصورة</button>
+
+    <!-- JavaScript لتغيير الصور -->
+    <script>
+        // قائمة بالصور المولدة بالذكاء الاصطناعي
+        const images = [
+            'https://via.placeholder.com/300/FF5733/FFFFFF?text=AI+Image+1',
+            'https://via.placeholder.com/300/33FF57/FFFFFF?text=AI+Image+2',
+            'https://via.placeholder.com/300/3357FF/FFFFFF?text=AI+Image+3',
+            'https://via.placeholder.com/300/FF33A5/FFFFFF?text=AI+Image+4'
+        ];
+
+        // تغيير الصورة عند النقر على الزر
+        document.getElementById('changeImage').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            document.getElementById('imageContainer').style.backgroundImage = `url('${images[randomIndex]}')`;
+        });
+    </script>
+
+</body>
+</html>
